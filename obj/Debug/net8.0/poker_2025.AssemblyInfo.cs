@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("poker_2025")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0f9c1a72908f5ccc65dbf9fd937c5195c3818f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1792f46ec5a51a61f4209ca6aef6d06622db7a7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("poker_2025")]
 [assembly: System.Reflection.AssemblyTitleAttribute("poker_2025")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

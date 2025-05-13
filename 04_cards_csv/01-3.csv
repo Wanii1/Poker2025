@@ -1,7 +1,7 @@
- 6,Diamonds, true
- 3,Clubs,    true
- 6,Spades,   false
- 3,Spades,   true
- 6,Hearts,   false
- 9,Hearts,   true 
+6,Diamonds, true
+3,Clubs,    true
+6,Spades,   false
+3,Spades,   true
+6,Hearts,   false
+9,Hearts,   true 
 10,Hearts,   true

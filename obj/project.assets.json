@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\7720165\\Downloads\\Poker2025\\poker_2025.csproj",
+      "projectUniqueName": "C:\\Users\\7720165\\Documents\\GitHub\\Poker2025\\poker_2025.csproj",
       "projectName": "poker_2025",
-      "projectPath": "C:\\Users\\7720165\\Downloads\\Poker2025\\poker_2025.csproj",
+      "projectPath": "C:\\Users\\7720165\\Documents\\GitHub\\Poker2025\\poker_2025.csproj",
       "packagesPath": "C:\\Users\\7720165\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\7720165\\Downloads\\Poker2025\\obj\\",
+      "outputPath": "C:\\Users\\7720165\\Documents\\GitHub\\Poker2025\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\7720165\\AppData\\Roaming\\NuGet\\NuGet.Config"

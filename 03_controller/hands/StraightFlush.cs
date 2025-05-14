@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Markup;
 using poker_2025.controller;
 using poker_2025.model;
@@ -12,49 +14,77 @@ public class StraightFlush : Hands
     {
         String naipe = "";
         int count1 = 0;
-        int player_card_count = 0;
-        List<Card> hand_tmp = new List<Card>();
-        List <Card> card_tmp = new List<Card>();
-        for (int i = 0; i > 13; i++)
-        {
-            if (histogram.data[i].Count > 0){
-                for (int c = 0; c > 4; c++)
-                {
-                    hand_tmp.Add(new Card(histogram.data[i][c]));
-                }
+        int count2 = 0;
+        int card_num = 0;
+        int [] values = [0,0,0,0,0];
 
-            }
-        }
+        List<Card> card_tmp = new List<Card>();
 
-        foreach(Card c in hand_tmp){
-            if (count1 == 0){
-                naipe = c.suit.ToString();
-                count1++;
-                continue;
-            }
-            Suit s = Enum.Parse<Suit>(naipe);
-            if (count1 <= 2 && c.suit != s){
-                count1 = 1;
-                naipe = c.suit.ToString();
-                continue;
-            }
-            if (c.suit == s){
-                count1++;
-                card_tmp.Add(new Card(c));
-            }
-        }
-        
-        if (count1 >= 5)
+
+        for (int i = 0; i < 13; i++)
         {
-            foreach (Card c in card_tmp)
+            if (histogram.data[i].Count == 1 && count1 == 0)
             {
-                if (!c.on_table)
-                    player_card_count++;
+                values[count1] = i;
+                count1++;
+                card_num = i;
+                continue;
             }
-            if (player_card_count > 1){
-                hand_find = new List<Card>(hand_tmp);
-                return true;
+
+            int difference = i - card_num;
+            if (histogram.data[i].Count > 0 && difference == 1)
+            {
+                naipe = histogram.data[i][0].suit.ToString();
+                values[count1] = i;
+                card_num = i;
+                count1++;
             }
+           if (histogram.data[i].Count > 0 && difference != 1)
+            {
+                values[0] = i;
+                count1 = 1;
+                card_num = i;
+                continue;
+            }
+   
+
+        }
+
+        // Se tiver uma sequencia verifica se elas são do mesmo naipe e as separa.
+        if (count1 >= 5){
+            for (int c = 0; c < 5; c++)
+            {   
+                Suit s = Enum.Parse<Suit>(naipe);
+                if (histogram.data[values[c]].Count == 1)
+                {
+                    if(histogram.data[values[c]][0].suit == s)
+                    {
+                        card_tmp.Add(new Card(histogram.data[values[c]][0]));
+                    }
+                }
+                else
+                {
+                    int card_count = histogram.data[values[c]].Count;
+                    for (int x = 0; x < card_count; x++)
+                    {
+                        if(histogram.data[values[c]][x].suit == s)
+                        {
+                            card_tmp.Add(new Card(histogram.data[values[c]][x]));
+                        }
+                    }
+                }
+            }
+        }
+
+        foreach (Card c in card_tmp){
+            if (!c.on_table){
+                count2++;
+            }
+        }
+        if (count2 != 0)
+        {
+            hand_find = new List<Card>(card_tmp);
+            return true;
         }
 
         return false;

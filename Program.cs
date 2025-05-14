@@ -63,7 +63,7 @@ class Program
         }
         else if (is_straight_flush)
         {
-            Console.WriteLine("Royal Encontrado: precione uma tecla par mostrar");
+            Console.WriteLine("Straight Flush Encontrado: precione uma tecla par mostrar");
             Console.ReadKey();
             Show.show_cards(straightFlush.hand_find);
         }

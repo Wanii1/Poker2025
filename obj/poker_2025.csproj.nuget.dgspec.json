@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\7720165\\Downloads\\Poker2025\\poker_2025.csproj": {}
+    "C:\\Users\\Prosaude\\Documents\\GitHub\\Poker2025\\poker_2025.csproj": {}
   },
   "projects": {
-    "C:\\Users\\7720165\\Downloads\\Poker2025\\poker_2025.csproj": {
+    "C:\\Users\\Prosaude\\Documents\\GitHub\\Poker2025\\poker_2025.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\7720165\\Downloads\\Poker2025\\poker_2025.csproj",
+        "projectUniqueName": "C:\\Users\\Prosaude\\Documents\\GitHub\\Poker2025\\poker_2025.csproj",
         "projectName": "poker_2025",
-        "projectPath": "C:\\Users\\7720165\\Downloads\\Poker2025\\poker_2025.csproj",
-        "packagesPath": "C:\\Users\\7720165\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\7720165\\Downloads\\Poker2025\\obj\\",
+        "projectPath": "C:\\Users\\Prosaude\\Documents\\GitHub\\Poker2025\\poker_2025.csproj",
+        "packagesPath": "C:\\Users\\Prosaude\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Prosaude\\Documents\\GitHub\\Poker2025\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\7720165\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Prosaude\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -53,12 +54,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

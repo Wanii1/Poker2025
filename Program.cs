@@ -51,10 +51,11 @@ class Program
         Royal royal = new Royal(cards);
         StraightFlush straightFlush = new StraightFlush(cards);
         FullHouse fullHouse = new FullHouse(cards);
+        Flush flush = new Flush(cards);
 
-        bool is_royal = royal.find();
-        bool is_full_house = fullHouse.find();
-        bool is_straight_flush = straightFlush.find();
+        bool is_royal = royal.find(), is_full_house = fullHouse.find(), is_straight_flush = straightFlush.find();
+        bool is_flush = flush.find();
+
         if (is_royal)
         {
             Console.WriteLine("Royal Encontrado: precione uma tecla par mostrar");
@@ -72,6 +73,13 @@ class Program
             Console.WriteLine("Full House encontrado: precione uma tecla par mostrar");
             Console.ReadKey();
             Show.show_cards(fullHouse.hand_find);
+
+        }
+        else if (is_flush)
+        {
+            Console.WriteLine("Flush encontrado: precione uma tecla par mostrar");
+            Console.ReadKey();
+            Show.show_cards(flush.hand_find);
         }
         else
         {

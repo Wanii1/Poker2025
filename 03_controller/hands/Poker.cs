@@ -31,7 +31,7 @@ public class Poker : Hands
                 int card_count = histogram.data[i].Count;
                 for (int c = 0; c < card_count; c++)
                 { 
-                    if (!histogram.data[i][c].on_table) four_kind.Add(histogram.data[i][c]);
+                    if (!histogram.data[i][c].on_table)four_kind.Add(histogram.data[i][c]);
                 }
             }
 

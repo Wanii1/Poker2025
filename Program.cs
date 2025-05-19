@@ -52,9 +52,11 @@ class Program
         StraightFlush straightFlush = new StraightFlush(cards);
         FullHouse fullHouse = new FullHouse(cards);
         Flush flush = new Flush(cards);
+        TwoPairs twoPairs = new TwoPairs(cards);
 
         bool is_royal = royal.find(), is_full_house = fullHouse.find(), is_straight_flush = straightFlush.find();
         bool is_flush = flush.find();
+        bool is_two_pairs = twoPairs.find();
 
         if (is_royal)
         {
@@ -80,6 +82,12 @@ class Program
             Console.WriteLine("Flush encontrado: precione uma tecla par mostrar");
             Console.ReadKey();
             Show.show_cards(flush.hand_find);
+        }
+        else if (is_two_pairs)
+        {
+            Console.WriteLine("Two Pairs encontrado: precione uma tecla par mostrar");
+            Console.ReadKey();
+            Show.show_cards(twoPairs.hand_find);
         }
         else
         {

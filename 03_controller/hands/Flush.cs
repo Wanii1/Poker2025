@@ -18,6 +18,7 @@ public class Flush : Hands
         List<Card> table_cards = new List<Card>();
         List<Card> card_tmp = new List<Card>();
         List<int> index = new List<int>();
+        
         for (int i = 0; i < 13; i++)
         {
             if (histogram.data[i].Count > 1)
@@ -25,8 +26,6 @@ public class Flush : Hands
                 var card_count = histogram.data[i].Count;
                 for (int x = 0; x < card_count; x++)
                 {
-                    Console.Write(histogram.data[i][x]);
-                    Console.ReadKey();
                     if (!histogram.data[i][x].on_table) player_cards.Add(new Card(histogram.data[i][x]));
                     else table_cards.Add(new Card(histogram.data[i][0]));
                 }

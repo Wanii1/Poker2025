@@ -53,10 +53,11 @@ class Program
         FullHouse fullHouse = new FullHouse(cards);
         Flush flush = new Flush(cards);
         TwoPairs twoPairs = new TwoPairs(cards);
+        Poker poker = new Poker(cards);
 
-        bool is_royal = royal.find(), is_full_house = fullHouse.find(), is_straight_flush = straightFlush.find();
-        bool is_flush = flush.find();
-        bool is_two_pairs = twoPairs.find();
+        bool is_royal = royal.find(), is_full_house = fullHouse.find(),is_poker = poker.find();
+        bool is_straight_flush = straightFlush.find();
+        bool is_flush = flush.find(), is_two_pairs = twoPairs.find();
 
         if (is_royal)
         {
@@ -64,18 +65,24 @@ class Program
             Console.ReadKey();
             Show.show_cards(royal.hand_find);
         }
-        else if (is_straight_flush)
-        {
-            Console.WriteLine("Straight Flush Encontrado: precione uma tecla par mostrar");
-            Console.ReadKey();
-            Show.show_cards(straightFlush.hand_find);
-        }
         else if (is_full_house)
         {
             Console.WriteLine("Full House encontrado: precione uma tecla par mostrar");
             Console.ReadKey();
             Show.show_cards(fullHouse.hand_find);
 
+        }
+        else if (is_poker)
+        { 
+            Console.WriteLine("Quadra Encontrada: precione uma tecla par mostrar");
+            Console.ReadKey();
+            Show.show_cards(poker.hand_find);
+        }
+        else if (is_straight_flush)
+        {
+            Console.WriteLine("Straight Flush Encontrado: precione uma tecla par mostrar");
+            Console.ReadKey();
+            Show.show_cards(straightFlush.hand_find);
         }
         else if (is_flush)
         {

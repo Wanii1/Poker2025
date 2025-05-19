@@ -21,9 +21,10 @@ public class TwoPairs : Hands
         List<int> index = new List<int>();
         for (int i = 0; i < 13; i++)
         {
+            int card_count = histogram.data[i].Count;
             if (histogram.data[i].Count >= 2)
             {
-                int card_count = histogram.data[i].Count;
+
                 for (int card = 0; card < card_count; card++)
                 {
                     if (!histogram.data[i][card].on_table)
@@ -33,9 +34,15 @@ public class TwoPairs : Hands
                     }
                     pairs.Add(histogram.data[i][card]);
                 }
+                continue;
             }
+            for (int card = 0; card < card_count; card++)
+            {
+
+                if (!histogram.data[i][card].on_table) hand.Add(histogram.data[i][card]);
+            }
+
         }
-        foreach (int c in index) Console.Write(c);
 
         if (count1 <= 1) return false;
         else

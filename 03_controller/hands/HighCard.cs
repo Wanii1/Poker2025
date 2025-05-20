@@ -21,6 +21,7 @@ public class HighCard : Hands
         {
             if (!histogram.data[1][0].on_table)
             {
+                card_tmp.Add(histogram.data[1][0]);
                 hand_find = new List<Card>(card_tmp);
                 return true;
             }
@@ -35,6 +36,7 @@ public class HighCard : Hands
                     if (!histogram.data[i][c].on_table)
                     {
                         card_tmp.Clear();
+                        card_tmp.Add(histogram.data[i][c]);
                         hand_find = new List<Card>(card_tmp);
                         break;
                     }

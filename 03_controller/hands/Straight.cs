@@ -1,7 +1,14 @@
 using poker_2025.controller;
 using poker_2025.model;
 
+
+/// <summary> 
+/// Classe que reconhece a jogada Straight do Poker.
+/// Straight: Cartas em sequência sem ser do naipe.
+/// Davi7 2025-05-17
+/// </summary>
 namespace poker_2025.controller.hands
+
 {
     public class Straight : Hands
     {
@@ -47,7 +54,7 @@ namespace poker_2025.controller.hands
                     {
                         int current_value = (i + j == 14) ? 1 : i + j;
                         List<Card> candidates = histogram.data[current_value];
-                        
+
                         // Escolhe a melhor carta (prioriza a que está na mão)
                         Card selected = candidates.FirstOrDefault(c => !c.on_table) ?? candidates[0];
 

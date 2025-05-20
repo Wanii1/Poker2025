@@ -7,16 +7,25 @@ using poker_2025.controller;
 using poker_2025.model;
 namespace poker_2025.controller.hands;
 
+
+/// <summary> 
+/// Classe que reconhece a jogada HighCard do Poker.
+/// High Card: a carta mais alta da rodada que é do jogador.
+/// Wanii1 2025-05-15
+/// </summary>
 public class HighCard : Hands
 {
+    
     
     public HighCard(List<Card> cards) : base(cards) { }
 
     public override bool find()
     {
-
+        //Lista final a ser enviada.
         List<Card> card_tmp = new List<Card>();
 
+        //Verificamos se há uma carta do jogador na posição do Ás, se houver retornamos true.
+        //E enviamos a carta como lista.
         if (histogram.data[1].Count == 1)
         {
             if (!histogram.data[1][0].on_table)
@@ -26,6 +35,8 @@ public class HighCard : Hands
                 return true;
             }
         }
+        //Procuramos no histrograma cartas do jogador, começando pela ultima posição até a segunda.
+        //Se houver carta a adcionamos na lista e saimos do loop.
         for (int i = 13; i <= 2; i--)
         {
             var card_count = histogram.data[i].Count;
@@ -38,12 +49,13 @@ public class HighCard : Hands
                         card_tmp.Clear();
                         card_tmp.Add(histogram.data[i][c]);
                         hand_find = new List<Card>(card_tmp);
-                        break;
+                        return true;
                     }
-                    
+
                 }
             }
         }
-        return true;
+        return false;
+        
     }
 }

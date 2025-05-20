@@ -50,15 +50,17 @@ class Program
         List<Card> cards = Load.load_hand();
         Royal royal = new Royal(cards);
         StraightFlush straightFlush = new StraightFlush(cards);
+        Poker poker = new Poker(cards);
         FullHouse fullHouse = new FullHouse(cards);
         Flush flush = new Flush(cards);
-        TwoPairs twoPairs = new TwoPairs(cards);
-        Poker poker = new Poker(cards);
         ThreeKind threeKind = new ThreeKind(cards);
-
+        TwoPairs twoPairs = new TwoPairs(cards);
+        Pair pair = new Pair(cards);
+        HighCard highCard = new HighCard(cards);
         bool is_royal = royal.find(),is_straight_flush = straightFlush.find(),is_poker = poker.find();
         bool is_full_house = fullHouse.find(), is_flush = flush.find();
-        bool is_three_kind = threeKind.find(), is_two_pairs = twoPairs.find();
+        bool is_three_kind = threeKind.find(), is_two_pairs = twoPairs.find(), is_pair = pair.find();
+        bool is_high_card = highCard.find();
 
         if (is_royal)
         {
@@ -102,6 +104,18 @@ class Program
             Console.WriteLine("Two Pairs encontrado: precione uma tecla par mostrar");
             Console.ReadKey();
             Show.show_cards(twoPairs.hand_find);
+        }
+        else if (is_pair)
+        {
+            Console.WriteLine("Pair encontrado: precione uma tecla par mostrar");
+            Console.ReadKey();
+            Show.show_cards(pair.hand_find);
+        }
+        else if (is_high_card)
+        {
+            Console.WriteLine("High Card encontrado: precione uma tecla par mostrar");
+            Console.ReadKey();
+            Show.show_cards(highCard.hand_find);  
         }
         else
         {

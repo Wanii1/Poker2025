@@ -15,6 +15,7 @@ public class StraightFlush : Hands
         String naipe = "";
         int count1 = 0;
         int count2 = 0;
+        int count3 = 0;
         int card_num = 0;
         int [] values = [0,0,0,0,0];
 
@@ -28,16 +29,21 @@ public class StraightFlush : Hands
                 values[count1] = i;
                 count1++;
                 card_num = i;
+                Console.WriteLine("Goated");
+                Console.ReadKey();
                 continue;
             }
 
             int difference = i - card_num;
             if (histogram.data[i].Count > 0 && difference == 1)
             {
+                Console.WriteLine("Goated");
+                Console.ReadKey();
                 naipe = histogram.data[i][0].suit.ToString();
                 values[count1] = i;
                 card_num = i;
                 count1++;
+                
             }
            if (histogram.data[i].Count > 0 && difference != 1)
             {
@@ -46,7 +52,7 @@ public class StraightFlush : Hands
                 card_num = i;
                 continue;
             }
-   
+            if (count1 >= 5) break;
 
         }
 
@@ -69,6 +75,7 @@ public class StraightFlush : Hands
                     {
                         if(histogram.data[values[c]][x].suit == s)
                         {
+                            count2++;
                             card_tmp.Add(new Card(histogram.data[values[c]][x]));
                         }
                     }
@@ -78,10 +85,10 @@ public class StraightFlush : Hands
 
         foreach (Card c in card_tmp){
             if (!c.on_table){
-                count2++;
+                count3++;
             }
         }
-        if (count2 != 0)
+        if (count3 != 0 && count2 == 5)
         {
             hand_find = new List<Card>(card_tmp);
             return true;

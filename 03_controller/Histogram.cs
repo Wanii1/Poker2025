@@ -36,7 +36,7 @@ namespace poker_2025.controller // segue o padrão de momenclatura dos diretóri
             for (int i = 0; i < cards.Count; i++)
             {
                 // cria uma cópia da carta da vez
-                Card card_copy = new Card (cards[i].value, cards[i].suit, cards[i].on_table);
+                Card card_copy = new Card(cards[i].value, cards[i].suit, cards[i].on_table, cards[i].player);
                 // salva na var aux <card_value> o valor numérico da carta
                 int card_value = card_copy.value;
                 // usa <card_value> para acessar a posição no array 

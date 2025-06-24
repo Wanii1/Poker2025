@@ -1,7 +1,9 @@
-13,Clubs,    true
- 1,Clubs,    true
-11,Clubs,    true
-12,Clubs,    true
-10,Clubs,    true
-10,Diamonds, false
- 1, Hearts,  false
+13,Clubs,    true,0
+ 1,Clubs,    true,0
+11,Clubs,    true,0
+12,Clubs,    true,0
+10,Clubs,    true,0
+10,Diamonds, false,1
+ 1, Hearts,  false,1
+ 2, Spades, false,2
+ 5, Diamonds, false,2 

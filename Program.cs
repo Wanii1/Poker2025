@@ -13,6 +13,7 @@ using poker_2025.controller;
 using poker_2025.controller.hands;
 using System.Runtime.CompilerServices;
 using System.Formats.Asn1;
+using poker_2025.cards;
 
 /// <summary> 
 /// Classe que define o ponto de entrada do projeto.
@@ -33,22 +34,23 @@ class Program
         Console.WriteLine("RECONHECIMENTO DAS MÃOS DE POKER - 2025");
         Console.WriteLine("MODALIDADE CONSIDERADA: TEXAS HOLD'EM");
         #region testes
-            /*
-            List<Card> cards = Load.load_hand();
-            List<Card>[] hitogram = Histogram.get_histogram(cards);
+        /*
+        List<Card> cards = Load.load_hand();
+        List<Card>[] hitogram = Histogram.get_histogram(cards);
 
-            Console.WriteLine("Pressione uma tecla para ver a lista de carta carregadas.");
-            Console.ReadKey();
-            Show.show_cards(cards);
+        Console.WriteLine("Pressione uma tecla para ver a lista de carta carregadas.");
+        Console.ReadKey();
+        Show.show_cards(cards);
 
-            Console.WriteLine("Pressione uma tecla para ver o histograma relacionado.");
-            Console.ReadKey();
-            Show.show_histogram(hitogram);
-            */
+        Console.WriteLine("Pressione uma tecla para ver o histograma relacionado.");
+        Console.ReadKey();
+        Show.show_histogram(hitogram);
+        */
         #endregion
 
-        List<Card> cards = Load.load_hand();
-
+        List<Card> cards = Dealer.deal_hand();
+        List<Card> player_one_card = Dealer.deal_player_one(cards);
+        List<Card> player_two_card = Dealer.deal_player_two(cards);
 
         Royal royal = new Royal(cards);
         StraightFlush straightFlush = new StraightFlush(cards);

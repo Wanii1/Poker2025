@@ -20,19 +20,21 @@ public class Card
     /// <value>suit</value>
     public Suit suit     {get;} 
     public int value     {get;}
-    public bool on_table {get;}
-        
+    public bool on_table { get; set; }
+    public int player    { get; set; }
+
     /// <summary>
     /// Construtor padrão da classe.
     /// </summary>
     /// <param name="v">Para o valor numérico da carta.</param>
     /// <param name="s">Para o naipe da carta.</param>
     /// <param name="t">Para o status: true na mesa, false na mão do jogador </param>
-    public Card(int v, Suit s, bool t)
-    { 
-        value    = v;
-        suit     = s;
+    public Card(int v, Suit s, bool t, int p)
+    {
+        value = v;
+        suit = s;
         on_table = t;
+        player = p;
     }
 
     /// <summary>
@@ -41,9 +43,10 @@ public class Card
     /// <param name="c">Objeto Card a ser copiado.</param>    
     public Card(Card c)
     {
-        this.suit     = c.suit;
-        this.value    = c.value;
+        this.suit = c.suit;
+        this.value = c.value;
         this.on_table = c.on_table;
+        this.player = c.player;
     }
 
     /// <summary>

@@ -1,7 +1,9 @@
-6,Diamonds, true
-3,Clubs,    true
-6,Spades,   false
-3,Spades,   true
-6,Hearts,   false
-9,Hearts,   true 
-10,Hearts,   true
+6,Diamonds, true,0
+3,Clubs,    true,0
+6,Spades,   false,1
+3,Spades,   true,0
+6,Hearts,   false,1
+9,Hearts,   true,0 
+10,Hearts,   true,0
+ 2, Spades, false,2
+ 5, Diamonds, false,2 

@@ -1,7 +1,9 @@
-    13,Clubs,    true
-     1,Clubs,    false
-    11,Clubs,    true
-    12,Clubs,    true
-    10,Clubs,    false
-    10,Diamonds, true
-     1, Hearts,  true 
+    13,Clubs,    true,0
+     1,Clubs,    false,1
+    11,Clubs,    true,0
+    12,Clubs,    true,0
+    10,Clubs,    false,1
+    10,Diamonds, true,0
+     1, Hearts,  true,0
+     2, Clubs, false,2
+     6,Diamonds, false, 2       

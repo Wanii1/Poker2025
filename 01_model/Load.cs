@@ -45,7 +45,7 @@ public class Load
             foreach(var str_line in readText)
             {
                 string[] line = str_line.Split(','); // separa a linha em <str_line> pelas vírgulas
-                Card card = new Card (int.Parse(line[0]), Enum.Parse<Suit>(line[1]), bool.Parse(line[2])); //cria uma variável do tipo <struc Card>
+                Card card = new Card (int.Parse(line[0]), Enum.Parse<Suit>(line[1]), bool.Parse(line[2]), int.Parse(line[3])); //cria uma variável do tipo <struc Card>
                 cards.Add(card); // adciona a carta criada na lista <cards>
             }
         }

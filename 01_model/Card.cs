@@ -29,6 +29,7 @@ public class Card
     /// <param name="v">Para o valor numérico da carta.</param>
     /// <param name="s">Para o naipe da carta.</param>
     /// <param name="t">Para o status: true na mesa, false na mão do jogador </param>
+    /// <param name="p">Para o Jogador: 1 é do jogador 1, 2 é do jogador 2, 0 é para a mesa </param>
     public Card(int v, Suit s, bool t, int p)
     {
         value = v;
@@ -64,7 +65,7 @@ public class Card
             _ => value.ToString()
         };
         
-        return $"{valueDisplay}\t{suit.to_symbol()}\t{(on_table ? "M" : "J")}";        
+        return $"{valueDisplay}\t{suit.to_symbol()}\t{(on_table ? "M" : "J")}\t{player}";        
         // Alternativa mais descritiva:
         // return $"{valueDisplay} of {Suit.ToFriendlyName()} {Suit.ToSymbol()}";
     }

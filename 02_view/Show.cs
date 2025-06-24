@@ -22,9 +22,9 @@ namespace poker_2025.view
         /// <param name="cards_">Lista de objetos do tipo Card.</param>        
         public static void show_cards(List<Card> cards_)
         {
-            Console.Clear(); // limpa a tela
+            //Console.Clear(); // limpa a tela
             Console.WriteLine("##################################################");
-            Console.WriteLine("Uma lista de cartas!");
+            //Console.WriteLine("Uma lista de cartas!");
             Console.WriteLine("--------------------------------------------------");
             foreach (var card_ in cards_) // para cada item <card_> na coleção <cards_>
             {// mostra a representação em texto da carta
@@ -34,7 +34,7 @@ namespace poker_2025.view
                 //    Console.WriteLine("_" + card_.ToString());
                 Console.WriteLine(card_.ToString());
             }
-            Console.WriteLine("--------------------------------------------------");
+            //Console.WriteLine("--------------------------------------------------");
         }//fim do método <show_cards>
 
         //recebe um array de listas do tipo <Card>

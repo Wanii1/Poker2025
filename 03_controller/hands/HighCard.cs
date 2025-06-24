@@ -37,7 +37,7 @@ public class HighCard : Hands
         }
         //Procuramos no histrograma cartas do jogador, começando pela ultima posição até a segunda.
         //Se houver carta a adcionamos na lista e saimos do loop.
-        for (int i = 13; i <= 2; i--)
+        for (int i = 13; i > 2; i--)
         {
             var card_count = histogram.data[i].Count;
             if (histogram.data[i].Count > 0)
